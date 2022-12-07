@@ -1,5 +1,5 @@
 <template>
-    <h2>Cual es este Po?</h2>
+    <h2>Cual es este Pokemon?</h2>
 
     <PokemonPicture/>
     <PokemonOptions/>    
