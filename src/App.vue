@@ -6,6 +6,7 @@
 
 <script>
 
+
 import pokemon from './pages/PokemonPage.vue'
 
 export default {
