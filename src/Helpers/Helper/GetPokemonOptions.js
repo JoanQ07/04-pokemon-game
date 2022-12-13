@@ -18,7 +18,8 @@ import pokemonApi from "@/assets/api/pokemonApi"
 
         const pokemons = await getPokemosNames(mixPokemon.splice(0,4))
 
-        console.table(pokemons)
+        return pokemons
+
 
     }
     

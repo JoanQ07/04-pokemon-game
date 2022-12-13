@@ -2,7 +2,7 @@
     <h2>Cual es este Pokemon?</h2>
 
     <PokemonPicture :pokemonId="50" :showPokemon="true"/>
-    <PokemonOptions/>    
+    <PokemonOptions  :pokemons="pokemonArr"/>    
 
 </template>
 
@@ -10,13 +10,33 @@
 
 import PokemonPicture from '@/components/PokemonPicture.vue'
 import PokemonOptions from '@/components/PokemonOptions.vue'
-import getPokemonsOptions from '@/Helpers/Helper/GetPokemonOptions';
+import getPokemonsOptions from '@/Helpers/Helper/GetPokemonOptions'
 
-console.log(getPokemonsOptions())
+
 
 export default {
     components: {
         PokemonPicture, PokemonOptions
+    },
+    data(){
+
+        return {
+            pokemonArr: []
+        }
+
+    },
+    methods: {
+
+        async mixPokemonArray() {
+
+            this.pokemonArr = await getPokemonsOptions()
+            console.log(this.pokemonArr)
+
+        }
+
+    },
+    mounted() {
+        this.mixPokemonArray()
     }
 }
 </script>
