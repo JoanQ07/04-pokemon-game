@@ -1,17 +1,19 @@
 <template>
 
-  <div class="pokemon-container">
-      <img
-        :src="this.imgSrc"
-        alt="Pokemon"
-        class="hidden-pokemon"
-        >
-
-      <img v-if="this.showPokemon"
-        :src="this.imgSrc"
-        alt="Pokemon"
-        class="fade-in">
-
+  <div>
+    <div class="pokemon-container">
+        <img
+          :src="this.imgSrc"
+          alt="Pokemon"
+          class="hidden-pokemon"
+          >
+    
+        <img v-if="this.showPokemon"
+          :src="this.imgSrc"
+          alt="Pokemon"
+          class="fade-in">
+    
+    </div>
   </div>
 
 
@@ -43,6 +45,10 @@ export default {
       return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`
 
     }
+
+
+  },
+  methods: {
 
 
   }

@@ -1,31 +1,39 @@
-<template   >
+<template>
+
+  <!--  AQUI TENEMOS LAS OPCIONES DE POKEMOS QUE SE GENERAN EN EL DOM -->
+
+
   <div class="options-container">
-
-  <ul>
-    <li
-    v-for="poke in pokemons"
-    :key="poke.id">
-    {{poke.name}}
-    </li>
-  </ul>
-
-
+    <ul>
+        <!-- LA :KEY ES UN IDENTIFICADOR -->
+        <!-- LA PROPS POKEMONS RESIVE VALOR EN POKEMONPAGE, DONDE SE LE PASA UN ARRAY. -->
+        <li
+        v-for="poke in pokemons"
+        :key="poke.id" 
+        @click="$emit( 'selec', poke, event )">
+        {{poke.name}}
+        </li>
+    </ul>
   </div>  
 </template>
 
+
 <script>
 export default {
-
+  data(){
+    return{
+    }
+  },
   props: {
-
     pokemons: {
 
       type: Array,
       requiered: true
 
     }
-
-
+  },
+  methods: {
+    
   }
 
 }
