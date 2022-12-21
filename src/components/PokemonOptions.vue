@@ -3,6 +3,7 @@
   <!--  AQUI TENEMOS LAS OPCIONES DE POKEMOS QUE SE GENERAN EN EL DOM -->
 
 
+        <!-- :style="{ backgroundColor: color }" -->
   <div class="options-container">
     <ul>
         <!-- LA :KEY ES UN IDENTIFICADOR -->
@@ -10,7 +11,7 @@
         <li
         v-for="poke in pokemons"
         :key="poke.id" 
-        @click="$emit( 'selec', poke, event )">
+        @click="$emit( 'selec', poke, color )">
         {{poke.name}}
         </li>
     </ul>
@@ -22,6 +23,7 @@
 export default {
   data(){
     return{
+      color: 'blue'
     }
   },
   props: {
@@ -50,15 +52,25 @@ li {
     cursor: pointer;
     margin-bottom: 10px;
     width: 250px;
-}
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.2s ease-in-out, font-size 0.2s ease-in-out;
+  }
 
 li:hover {
     background-color: rgba(0, 0, 0, 0.05);
+    color: #666;
+    font-size: 1.5rem;
+    
 }
 
 .options-container {
     display: flex;
     justify-content: center;
+    
 }
+
+
+
 </style>
 
